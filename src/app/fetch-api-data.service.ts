@@ -100,6 +100,7 @@ export class FetchApiDataService {
       .pipe(catchError(this.handleError));
   }
 
+  //delete User
   public deleteUser(user: string): Observable<any> {
     return this.http
       .delete(apiUrl + 'users/' + user)

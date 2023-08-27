@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/internal/operators';
+import { catchError } from 'rxjs/operators';
 import {
   HttpClient,
   HttpHeaders,
@@ -30,8 +30,8 @@ export class FetchApiDataService {
     console.log(userDetails);
 
     const params = new HttpParams()
-      .set('Username', userDetails.username)
-      .set('Password', userDetails.password);
+      .set('Username', userDetails.Username)
+      .set('Password', userDetails.Password);
 
     return this.http
       .post(apiUrl + 'login', null, { params })

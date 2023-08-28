@@ -66,13 +66,15 @@ export class FetchApiDataService {
 
   //get user*
   public getUser(user: string): Observable<any> {
-    return this.http.get(apiUrl + user).pipe(catchError(this.handleError));
+    return this.http
+      .get(apiUrl + 'users/' + user)
+      .pipe(catchError(this.handleError));
   }
 
   //get favorite movies of a user*
   public getFavoriteMovies(user: string): Observable<any> {
     return this.http
-      .get(apiUrl + user + '/favorites')
+      .get(apiUrl + 'users/' + user + '/favorites')
       .pipe(catchError(this.handleError));
   }
 

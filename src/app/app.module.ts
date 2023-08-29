@@ -20,6 +20,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { InfoDialogComponent } from './info-dialog/info-dialog.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
     MovieCardComponent,
     WelcomePageComponent,
     InfoDialogComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

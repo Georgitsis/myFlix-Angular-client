@@ -21,6 +21,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { InfoDialogComponent } from './info-dialog/info-dialog.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ProfileViewComponent } from './profile-view/profile-view.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -37,6 +40,7 @@ const appRoutes: Routes = [
     WelcomePageComponent,
     InfoDialogComponent,
     NavbarComponent,
+    ProfileViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +56,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     MatIconModule,
+    MatToolbarModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

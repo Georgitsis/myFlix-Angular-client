@@ -47,13 +47,29 @@ body {
   .welcome-mat-card {
     background-color: #E50914;
     border-radius: 10px;
+    height: fit-content;
 
     .welcome-text-field {
-      background-color: inherit;
-
+      background-color: #FFF;
+      margin-top: 15px;
+      border-radius: 5px;
+      border: none;
+      min-height: 35px;
+      width: 100%;
+      padding-left: 5px;
       /* .mdc-text-field--filled:not(.mdc-text-field--disabled) {
         background-color: #FFF;
       }*/
+    }
+
+    .welcome-mat-card-actions {
+      padding: 0px;
+      padding-left: 16px;
+      height: fit-content;
+
+      .welcome-mat-card-button {
+        //margin-top: 15px;
+      }
     }
   }
 

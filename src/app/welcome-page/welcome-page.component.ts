@@ -16,14 +16,21 @@ export class WelcomePageComponent implements OnInit {
       this.router.navigate(['movies']);
   }
   openUserRegistrationDialog(): void {
-    this.dialog.open(UserRegistrationFormComponent, {
-      width: '280px',
-    });
+    this.dialog.closeAll();
+    setTimeout(() => {
+      this.dialog.open(UserRegistrationFormComponent, {
+        width: '280px',
+        panelClass: 'custom-dialog-class',
+      });
+    }, 100);
   }
   openUserLoginDialog(): void {
-    const dialogRef = this.dialog.open(UserLoginFormComponent, {
-      width: '280px',
-      panelClass: 'custom-dialog-class',
-    });
+    this.dialog.closeAll();
+    setTimeout(() => {
+      this.dialog.open(UserLoginFormComponent, {
+        width: '280px',
+        panelClass: 'custom-dialog-class',
+      });
+    }, 100);
   }
 }

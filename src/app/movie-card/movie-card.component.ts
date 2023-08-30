@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { InfoDialogComponent } from '../info-dialog/info-dialog.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-card',
@@ -13,19 +14,21 @@ export class MovieCardComponent implements OnInit {
   user: any = {};
 
   constructor(
-    public fetchApiData: FetchApiDataService, //public dialogRef: MatDialogRef<UserLoginFormComponent>, //public snackBar: MatSnackBar
-    public dialog: MatDialog
+    public fetchApiData: FetchApiDataService,
+    public dialog: MatDialog,
+    public router: Router
   ) {}
 
   ngOnInit(): void {
-    this.getMovies();
-    this.user = JSON.parse(localStorage.getItem('user')!);
+    if (localStorage.getItem('user') && localStorage.getItem('token')) {
+      this.getMovies();
+      this.user = JSON.parse(localStorage.getItem('user')!);
+    } else this.router.navigate(['welcome']);
   }
 
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
-      return this.movies;
     });
   }
 

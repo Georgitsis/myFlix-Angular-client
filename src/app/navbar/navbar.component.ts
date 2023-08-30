@@ -14,6 +14,10 @@ export class NavbarComponent implements OnInit {
     this.username = JSON.parse(localStorage.getItem('user')!).Username;
   }
 
+  navigateToProfileView() {
+    this.router.navigate(['profileView']);
+  }
+
   logout() {
     localStorage.removeItem('user');
     localStorage.removeItem('token');

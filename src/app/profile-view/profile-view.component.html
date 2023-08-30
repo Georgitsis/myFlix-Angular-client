@@ -1,1 +1,21 @@
-<p>profile-view works!</p>
+<app-navbar></app-navbar>
+<div class="profile-view-container">
+  <div class="profile-info">
+    <h1>User Profile</h1>
+    <div class="user-profile-info">
+      <span class="profile-field">Username:</span><span class="profile-field-data">{{user.Username}}</span>
+      <span class="profile-field">E-mail:</span><span class="profile-field-data">{{user.email}}</span>
+      <span class="profile-field">Birth date:</span><span class="profile-field-data">{{user.birthDate}}</span>
+    </div>
+    <h1>Your favorite movies</h1>
+    <ul class="favorite-movies-list">
+      <li *ngFor="let movieTitle of favoriteMoviesByTitle;">{{movieTitle}}</li>
+    </ul>
+  </div>
+
+  <div class="update-profile-form">
+    <h1>
+      Update Profile
+    </h1>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.profile-view-container {
+  display: flex;
+  padding: 0px 50px;
+
+  .profile-info {
+    flex: 1 1 50%;
+
+    .user-profile-info {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: 1fr 7fr;
+      gap: 20px;
+    }
+
+    .favorite-movies-list {
+      list-style-type: none;
+      padding-inline-start: 0px;
+    }
+  }
+
+  .update-profile-form {
+    display: flex;
+    flex: 1 1 50%;
+  }
+}

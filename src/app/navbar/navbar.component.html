@@ -1,6 +1,10 @@
+<div class="spacer-top"></div>
 <mat-toolbar class="nav-bar">
-  <div class="toolbar-content">
-    <a mat-button (click)="navigateToProfileView()">{{this.username}}<mat-icon>account_circle</mat-icon></a>
-    <a mat-button (click)="logout()"><mat-icon>logout</mat-icon></a>
-  </div>
+
+  <a mat-button (click)="navigateToMovieView()" class="logo" style="flex-grow: 0;"><b>myFlix</b></a>
+  <span class="filler-nav-bar"></span>
+  <a mat-button (click)="navigateToProfileView()">{{this.username}}<mat-icon>account_circle</mat-icon></a>
+  <a mat-button (click)="logout()"><mat-icon>logout</mat-icon></a>
+
+
 </mat-toolbar>

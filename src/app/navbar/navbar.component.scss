@@ -1,13 +1,31 @@
+.spacer-top {
+  height: 50px;
+}
+
 .toolbar-content {
+
   display: flex;
-  justify-content: flex-end;
+  //justify-content: flex-end;
   align-items: center;
-  flex-grow: 1;
-  /* To push the content to the right edge */
+  //flex-grow: ;
+}
+
+.logo {
+  font-size: xx-large;
+}
+
+.filler-nav-bar {
+  //align-self: flex-end;
+  flex: 1;
 }
 
 .nav-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
   background-color: #E50914;
   color: #FFF;
   margin-bottom: 50px;
+  z-index: 9999;
+  border-bottom: solid 4px #8a060d;
 }

@@ -14,8 +14,12 @@ export class NavbarComponent implements OnInit {
     this.username = JSON.parse(localStorage.getItem('user')!).Username;
   }
 
+  navigateToMovieView() {
+    this.router.navigate(['movies']);
+  }
+
   navigateToProfileView() {
-    this.router.navigate(['profileView']);
+    this.router.navigate(['profile-view']);
   }
 
   logout() {

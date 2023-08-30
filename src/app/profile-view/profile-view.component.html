@@ -3,13 +3,13 @@
   <div class="profile-info">
     <h1>User Profile</h1>
     <div class="user-profile-info">
-      <span class="profile-field">Username:</span><span class="profile-field-data">{{user.Username}}</span>
-      <span class="profile-field">E-mail:</span><span class="profile-field-data">{{user.email}}</span>
-      <span class="profile-field">Birth date:</span><span class="profile-field-data">{{user.birthDate}}</span>
+      <span class="profile-field"><b>Username:</b></span><span class="profile-field-data">{{user.Username}}</span>
+      <span class="profile-field"><b>E-mail:</b></span><span class="profile-field-data">{{user.email}}</span>
+      <span class="profile-field"><b>Birth date:</b></span><span class="profile-field-data">{{user.birthDate}}</span>
     </div>
-    <h1>Your favorite movies</h1>
+    <h1 style="margin-top : 60px">Your favorite movies</h1>
     <ul class="favorite-movies-list">
-      <li *ngFor="let movieTitle of favoriteMoviesByTitle;">{{movieTitle}}</li>
+      <li *ngFor="let movieTitle of favoriteMoviesByTitle;" class="favorite-movies-list-element">{{movieTitle}}</li>
     </ul>
   </div>
 

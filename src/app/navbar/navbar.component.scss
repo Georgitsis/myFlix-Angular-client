@@ -1,0 +1,13 @@
+.toolbar-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+  /* To push the content to the right edge */
+}
+
+.nav-bar {
+  background-color: #E50914;
+  color: #FFF;
+  margin-bottom: 50px;
+}

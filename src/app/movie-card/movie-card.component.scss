@@ -14,3 +14,37 @@
 .movie-card-img {
   max-width: 400px;
 }
+
+.custom-card-header {
+  mat-card-title {
+    font-size: x-large;
+    font-weight: 500;
+    margin-bottom: 10px;
+    /* Adjust the font size */
+  }
+
+  mat-card-subtitle {
+    font-size: medium;
+    color: #FFF;
+    margin-bottom: 10px;
+    /* Adjust the font size */
+  }
+}
+
+.custom-card-actions {
+  button {
+    color: #FFF;
+  }
+}
+
+.custom-mat-card {
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 10px;
+  margin: 25px;
+
+  .movie-card-img {
+    border-radius: 10px;
+    border: solid 2px #000;
+  }
+}

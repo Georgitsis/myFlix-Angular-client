@@ -1,16 +1,18 @@
 <!-- src/app/user-registration-form/user-registration-form.component.html -->
-<mat-card>
+
+<mat-card class="welcome-mat-card">
   <mat-card-header>
     <mat-card-title>Log In!</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <form>
       <mat-form-field>
-        <input matInput [(ngModel)]="loginData.Username" placeholder="Username" type="text" name="Username" required>
+        <input matInput [(ngModel)]="loginData.Username" placeholder="Username" type="text" name="Username" required
+          class="welcome-text-field">
       </mat-form-field>
       <mat-form-field>
         <input matInput [(ngModel)]="loginData.Password" type="password" placeholder="Password" name="Password"
-          required>
+          class="welcome-text-field" required>
       </mat-form-field>
     </form>
   </mat-card-content>

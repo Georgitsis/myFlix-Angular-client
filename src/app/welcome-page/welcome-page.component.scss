@@ -4,8 +4,17 @@
   margin-top: 5em;
 }
 
+.welcome-header {
+  font-size: 60px;
+}
+
 .welcome-view-buttons {
   display: flex;
   justify-content: center;
+
+  button {
+    background-color: #E50914;
+    color: #FFF;
+  }
 
 }

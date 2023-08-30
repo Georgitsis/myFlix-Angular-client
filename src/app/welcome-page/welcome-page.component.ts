@@ -21,8 +21,9 @@ export class WelcomePageComponent implements OnInit {
     });
   }
   openUserLoginDialog(): void {
-    this.dialog.open(UserLoginFormComponent, {
+    const dialogRef = this.dialog.open(UserLoginFormComponent, {
       width: '280px',
+      panelClass: 'custom-dialog-class',
     });
   }
 }

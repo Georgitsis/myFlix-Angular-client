@@ -33,4 +33,29 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: black;
+  color: #FFF;
+}
+
+.custom-dialog-class {
+  border-radius: 10px;
+  background-color: #FFF;
+  color: #FFF;
+  padding: 2px;
+  margin: 30px auto;
+
+  .welcome-mat-card {
+    background-color: #E50914;
+    border-radius: 10px;
+
+    .welcome-text-field {
+      background-color: inherit;
+
+      /* .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+        background-color: #FFF;
+      }*/
+    }
+  }
+
+  /* Add more css styles */
 }

@@ -25,7 +25,70 @@
   }
 
   .update-profile-form {
-    display: flex;
+    //display: flex;
     flex: 1 1 50%;
+
+    .update-user-profile-form {
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: 1fr 4fr 5fr;
+      gap: 20px;
+      vertical-align: middle;
+
+      label {
+        align-self: center;
+      }
+
+      .update-user-profile-input {
+        background-color: #FFF;
+        min-height: 30px;
+
+
+
+      }
+
+    }
+
+    .profile-form-button {
+      background-color: #E50914;
+      border-color: #8a060d;
+      border-radius: 10px;
+      height: 40px;
+      margin-top: 10px;
+      margin-right: 30px;
+
+
+
+    }
+
+    .update-button {
+      background-color: #FFF;
+      border-color: #E50914;
+      color: #E50914;
+
+      &:hover {
+        cursor: pointer;
+        background-color: darken($color: #FFF, $amount: 5%);
+      }
+
+      &:active {
+        background-color: darken($color: #FFF, $amount: 15%);
+      }
+    }
+
+    .delete-button {
+      background-color: #E50914;
+      border-color: #FFF;
+      color: #FFF;
+
+      &:hover {
+        cursor: pointer;
+        background-color: lighten($color: #E50914, $amount: 5%);
+      }
+
+      &:active {
+        background-color: lighten($color: #E50914, $amount: 15%);
+      }
+    }
   }
 }

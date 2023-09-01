@@ -41,7 +41,6 @@ export class UserLoginFormComponent implements OnInit {
       },
       (result) => {
         // Logic for a unsuccessful user registration
-        console.log(result);
         this.snackBar.open(result, 'OK', {
           duration: 3000,
         });

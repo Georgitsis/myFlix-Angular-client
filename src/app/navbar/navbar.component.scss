@@ -1,13 +1,11 @@
 .spacer-top {
-  height: 50px;
+  height: 100px;
 }
 
 .toolbar-content {
 
   display: flex;
-  //justify-content: flex-end;
   align-items: center;
-  //flex-grow: ;
 }
 
 .logo {
@@ -15,7 +13,6 @@
 }
 
 .filler-nav-bar {
-  //align-self: flex-end;
   flex: 1;
 }
 

@@ -39,9 +39,9 @@ body {
 
 .custom-dialog-class {
   position: fixed !important;
-  top: 100px;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -50%);
   z-index: 1000;
   border-radius: 10px;
   background-color: #FFF;

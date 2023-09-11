@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +9,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 })
 export class NavbarComponent implements OnInit {
   public username: string = '';
-  constructor(public router: Router) {}
+  constructor(public router: Router, public dialog: MatDialog) {}
   ngOnInit(): void {
     this.username = JSON.parse(localStorage.getItem('user')!).Username;
   }
@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
+    this.dialog.closeAll();
     localStorage.removeItem('user');
     localStorage.removeItem('token');
     this.router.navigate(['welcome']);

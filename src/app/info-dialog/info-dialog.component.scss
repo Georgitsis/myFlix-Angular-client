@@ -1,0 +1,20 @@
+.custom-info-dialog {
+  background-color: #E50914;
+  border-radius: 10px;
+  height: fit-content;
+
+  .custom-card-header {
+    mat-card-title {
+      font-size: x-large;
+      font-weight: 500;
+      margin-bottom: 10px;
+      /* Adjust the font size */
+    }
+  }
+
+  .custom-card-actions {
+    button {
+      color: #FFF;
+    }
+  }
+}

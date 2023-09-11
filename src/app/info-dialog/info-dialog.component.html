@@ -6,12 +6,20 @@
   <title>Info dialog</title>
 </head>
 
-<body>
-  <h1 mat-dialog-title>{{data.dialogTitle}}</h1>
-  <div mat-dialog-content>{{data.dialogContent}}</div>
-  <div mat-dialog-actions>
+<!--<body class="custom-info-dialog">
+  <h1 class="custom-info-dialog-header" mat-dialog-title>{{data.dialogTitle}}</h1>
+  <div class="custom-info-dialog-content" mat-dialog-content>{{data.dialogContent}}</div>
+  <div class="custom-info-dialog-actions" mat-dialog-actions>
     <button mat-button mat-dialog-close>Close</button>
   </div>
-</body>
+</body>-->
+
+<mat-card class="custom-info-dialog">
+  <mat-card-header class="custom-card-header">
+    <mat-card-title>{{data.dialogTitle}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>{{data.dialogContent}}</mat-card-content>
+  <mat-card-actions class="custom-card-actions"><button mat-button mat-dialog-close>Close</button></mat-card-actions>
+</mat-card>
 
 </html>

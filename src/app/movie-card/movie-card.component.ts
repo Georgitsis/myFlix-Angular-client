@@ -33,29 +33,38 @@ export class MovieCardComponent implements OnInit {
   }
 
   showGenre(genre: any): void {
+    this.dialog.closeAll();
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {
       dialogTitle: genre.name,
       dialogContent: genre.description,
     };
+    dialogConfig.width = '40vw';
+    dialogConfig.panelClass = 'custom-dialog-class';
     this.dialog.open(InfoDialogComponent, dialogConfig);
   }
 
   showDirector(director: any): void {
+    this.dialog.closeAll();
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {
       dialogTitle: director.name,
       dialogContent: director.bio,
     };
+    dialogConfig.width = '40vw';
+    dialogConfig.panelClass = 'custom-dialog-class';
     this.dialog.open(InfoDialogComponent, dialogConfig);
   }
 
   showPlot(movie: any): void {
+    this.dialog.closeAll();
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {
       dialogTitle: movie.title,
       dialogContent: movie.description,
     };
+    dialogConfig.width = '40vw';
+    dialogConfig.panelClass = 'custom-dialog-class';
     this.dialog.open(InfoDialogComponent, dialogConfig);
   }
 

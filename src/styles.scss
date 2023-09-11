@@ -32,46 +32,21 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", "sans-serif";
   background-color: black;
   color: #FFF;
 }
 
 .custom-dialog-class {
+  position: fixed !important;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1000;
   border-radius: 10px;
   background-color: #FFF;
-  color: #FFF;
   padding: 2px;
-  margin: 30px auto;
-
-  .welcome-mat-card {
-    background-color: #E50914;
-    border-radius: 10px;
-    height: fit-content;
-
-    .welcome-text-field {
-      background-color: #FFF;
-      margin-top: 15px;
-      border-radius: 5px;
-      border: none;
-      min-height: 35px;
-      width: 100%;
-      padding-left: 5px;
-      /* .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-        background-color: #FFF;
-      }*/
-    }
-
-    .welcome-mat-card-actions {
-      padding: 0px;
-      padding-left: 16px;
-      height: fit-content;
-
-      .welcome-mat-card-button {
-        //margin-top: 15px;
-      }
-    }
-  }
-
-  /* Add more css styles */
+  //margin: 30px auto;
 }
+
+/* Add more css styles */

@@ -7,25 +7,36 @@ import {
   HttpParams,
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 const apiUrl = 'https://fierce-meadow-39793-bd539c2b94d7.herokuapp.com/';
 
+/**
+ * Service for making API calls to the backend.
+ */
 @Injectable({
   providedIn: 'root',
 })
 export class FetchApiDataService {
   constructor(private http: HttpClient) {}
 
-  // Making the api call for the user registration endpoint
+  /**
+   * Sends a user registration request to the backend.
+   *
+   * @param userDetails - User registration details.
+   * @returns An observable of the registration response.
+   */
   public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
     return this.http
       .post(apiUrl + 'users', userDetails)
       .pipe(catchError(this.handleError));
   }
 
-  // Making the api call for the user registration endpoint
+  /**
+   * Sends a user login request to the backend.
+   *
+   * @param userDetails - User login details.
+   * @returns An observable of the login response.
+   */
   public userLogin(userDetails: any): Observable<any> {
     const params = new HttpParams()
       .set('Username', userDetails.Username)
@@ -36,7 +47,11 @@ export class FetchApiDataService {
       .pipe(catchError(this.handleError));
   }
 
-  //Making the api call to get all movies
+  /**
+   * Retrieves a list of all movies from the backend.
+   *
+   * @returns An observable of the list of movies.
+   */
   public getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
@@ -47,28 +62,48 @@ export class FetchApiDataService {
       .pipe(catchError(this.handleError));
   }
 
-  //Making the api call to get one single movie by title
+  /**
+   * Retrieves information about a single movie by title from the backend.
+   *
+   * @param movieTitle - The title of the movie to retrieve.
+   * @returns An observable of the movie information.
+   */
   public getSingleMovie(movieTitle: string): Observable<any> {
     return this.http
       .get(apiUrl + 'movies/' + movieTitle)
       .pipe(catchError(this.handleError));
   }
 
-  //making api call to get information on director
+  /**
+   * Retrieves information about a director from the backend.
+   *
+   * @param director - The name of the director to retrieve.
+   * @returns An observable of the director information.
+   */
   public getDirector(director: string): Observable<any> {
     return this.http
       .get(apiUrl + 'directors/' + director)
       .pipe(catchError(this.handleError));
   }
 
-  //get info about the genre by providing a movie title
+  /**
+   * Retrieves genre information for a movie by title from the backend.
+   *
+   * @param title - The title of the movie for which to retrieve genre information.
+   * @returns An observable of the genre information.
+   */
   public getGenre(title: string): Observable<any> {
     return this.http
       .get(apiUrl + title + '/genre')
       .pipe(catchError(this.handleError));
   }
 
-  //get user*
+  /**
+   * Retrieves user information from the backend.
+   *
+   * @param user - The username of the user to retrieve.
+   * @returns An observable of the user information.
+   */
   public getUser(user: string): Observable<any> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
@@ -79,14 +114,25 @@ export class FetchApiDataService {
       .pipe(catchError(this.handleError));
   }
 
-  //get favorite movies of a user*
+  /**
+   * Retrieves the favorite movies of a user from the backend.
+   *
+   * @param user - The username of the user to retrieve favorite movies for.
+   * @returns An observable of the user's favorite movies.
+   */
   public getFavoriteMovies(user: string): Observable<any> {
     return this.http
       .get(apiUrl + 'users/' + user + '/favorites')
       .pipe(catchError(this.handleError));
   }
 
-  //Add a movie to the users favorites list
+  /**
+   * Adds a movie to the user's favorites list on the backend.
+   *
+   * @param user - The username of the user.
+   * @param movieId - The ID of the movie to add to favorites.
+   * @returns An observable of the updated user's favorite movies.
+   */
   public addToFavoriteMovies(user: string, movieId: string): Observable<any> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
@@ -99,7 +145,13 @@ export class FetchApiDataService {
       .pipe(catchError(this.handleError));
   }
 
-  //Remove a movie from the users favorites list
+  /**
+   * Removes a movie from the user's favorites list on the backend.
+   *
+   * @param user - The username of the user.
+   * @param movieId - The ID of the movie to remove from favorites.
+   * @returns An observable of the updated user's favorite movies.
+   */
   public removeFromFavoriteMovies(
     user: string,
     movieId: string
@@ -113,7 +165,13 @@ export class FetchApiDataService {
       .pipe(catchError(this.handleError));
   }
 
-  //edit user data
+  /**
+   * Edits user data on the backend.
+   *
+   * @param user - The username of the user.
+   * @param userData - The updated user data.
+   * @returns An observable of the updated user data.
+   */
   public editUser(user: string, userData: any): Observable<any> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
@@ -124,7 +182,12 @@ export class FetchApiDataService {
       .pipe(catchError(this.handleError));
   }
 
-  //delete User
+  /**
+   * Deletes a user on the backend.
+   *
+   * @param user - The username of the user to delete.
+   * @returns An observable of the deletion response.
+   */
   public deleteUser(user: string): Observable<any> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders({
@@ -135,6 +198,12 @@ export class FetchApiDataService {
       .pipe(catchError(this.handleError));
   }
 
+  /**
+   * Handles HTTP errors.
+   *
+   * @param error - The HTTP error response.
+   * @returns An observable with an error message.
+   */
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
       console.error('Some error occurred:', error.error.message);
